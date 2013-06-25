@@ -1,0 +1,26 @@
+<div class="container">
+  <title>Anagrams!</title>
+  <h1>Anagram Solver Sucka!!</h1>
+    
+  <% if @anagrams %>
+  <p> Here are the anagrams for <%= @user_input %>: <br>
+    <ol><% @anagrams.each do |word| %>
+          <li><%= word.word %></li>
+          <% end %>
+    </ol>
+  </p>
+  <% end %> 
+    <form action="/anagram" method="post">
+      <p>Enter any word, and I'll give you all of its Anagrams!
+      </p>
+      <br>
+      <input type="text" name="user_input">
+      <input class="button" type="submit" value="Anagram it!">
+
+    </form>
+   <!--  we need to accept a word from a user 
+    we need a submit button
+
+    on the other end we need both a get and a post so that we can 
+    return anagrams whether we put the word in the URL or in the input box.  -->
+</div>
